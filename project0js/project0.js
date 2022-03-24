@@ -36,6 +36,15 @@ const checkForWin = function() {
     } 
     if (!currentGame.includes('')) { 
         console.log('draw')
-    }    
-    };    
+    }  
+    }; 
+    
+const reset = function() {
+    for(let i = 0; i < 9; i++){
+    currentGame[i] = ''
+    $ ('.cell').eq(i).removeClass('x circle')
+    } 
+    playerX = true 
+}  
 $ ('.cell').on('click', playerTurn)
+$ ('#restartButton').on('click', reset)
