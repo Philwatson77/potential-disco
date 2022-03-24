@@ -1,27 +1,41 @@
 let playerX = true 
 
+let currentGame = ['', '', '', '', '', '', '', '', '']
+
 const playerTurn = function() {
 let repete = $(this).attr("class").split(' ').length
 if (playerX && repete == 1) {
     $ (this).addClass('x')
+    currentGame[$ ('.cell').index(this)] = 'x'
+    playerX = !playerX 
 } else if (repete == 1) {
-    $ (this).addClass('circle')
+    $ (this).addClass('circle ')
+    currentGame[$ ('.cell').index(this)] = 'o'
+    playerX = !playerX 
 }
-playerX = !playerX 
+checkForWin() 
 }
 const checkForWin = function() {
-    const $cells = $('.cell')
-    if ($cells[0] == $cells[1] && $cells[0] == $cells[2]) {
-    } else if ($cells[3] == $cells[4] && $cells[3] == $cells[5]) {
-    } else if ($cells[6] == $cells[7] && $cells[6] == $cells[8]) {
-    } else if ($cells[0] == $cells[3] && $cells[0] == $cells[6]) {
-    } else if ($cells[1] == $cells[4] && $cells[1] == $cells[7]) {
-    } else if ($cells[2] == $cells[5] && $cells[2] == $cells[8]) {
-    } else if ($cells[0] == $cells[4] && $cells[0] == $cells[8]) {
-    } else if ($cells[2] == $cells[4] && $cells[2] == $cells[6]) {
+    if (currentGame[0] == currentGame[1] && currentGame[0] == currentGame[2] && currentGame[0] != '') {
+        console.log(currentGame[0] + ' Wins')
+    } else if (currentGame[3] == currentGame[4] && currentGame[3] == currentGame[5] && currentGame[3] != '') {
+        console.log(currentGame[3] + ' Wins')
+    } else if (currentGame[6] == currentGame[7] && currentGame[6] == currentGame[8] && currentGame[6] != '') {
+        console.log(currentGame[6] + ' Wins')
+    } else if (currentGame[0] == currentGame[3] && currentGame[0] == currentGame[6] && currentGame[0] != '') {
+        console.log(currentGame[0] + ' Wins')
+    } else if (currentGame[1] == currentGame[4] && currentGame[1] == currentGame[7] && currentGame[1] != '') {
+        console.log(currentGame[1] + ' Wins')
+    } else if (currentGame[2] == currentGame[5] && currentGame[2] == currentGame[8] && currentGame[2] != '') {
+        console.log(currentGame[2] + ' Wins')
+    } else if (currentGame[0] == currentGame[4] && currentGame[0] == currentGame[8] && currentGame[0] != '') {
+        console.log(currentGame[0] + ' Wins')
+    } else if (currentGame[2] == currentGame[4] && currentGame[2] == currentGame[6] && currentGame[2] != '') {
+        console.log(currentGame[2] + ' Wins')
 
+    } 
+    if (!currentGame.includes('')) { 
+        console.log('draw')
     }    
     };    
 $ ('.cell').on('click', playerTurn)
-
-console.log(checkForWin);
