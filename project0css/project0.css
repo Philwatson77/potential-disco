@@ -10,7 +10,8 @@
 
 body {
     margin: 0;
-
+    background-size: cover;
+    background: radial-gradient(circle at 10% 20%, rgb(255, 246, 236) 39.5%, rgba(100, 46, 122, 0.23) 100.2%); 
 }
 
 .board {
@@ -115,7 +116,7 @@ body {
 .board.circle .cell:not(.x):not(.circle):hover::after {
     width: calc(var(--mark-size) * .7);
     height: calc(var(--mark-size) * .7);
-    background-color: white;
+    background: radial-gradient(circle at 10% 20%, rgb(255, 246, 236) 39.5%, rgba(100, 46, 122, 0.23) 100.2%); 
 }
 
 .winner-message {
@@ -151,3 +152,4 @@ body {
 .winner-message.show {
     display: flex;
 }
+
