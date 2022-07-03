@@ -12,6 +12,8 @@ body {
     margin: 0;
     background-size: cover;
     background: radial-gradient(circle at 10% 20%, rgb(255, 246, 236) 39.5%, rgba(100, 46, 122, 0.23) 100.2%); 
+    padding: 10px;
+    position: relative;
 }
 
 .board {
@@ -154,6 +156,10 @@ body {
 }
 
 .restartButton {
-    margin-left: 55em; 
-    position: flex;
+    position: absolute;
+    margin: 48em 50em 0 50em;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 10px;
+    /* justify-content: center; */
 }
