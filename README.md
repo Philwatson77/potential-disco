@@ -1,6 +1,6 @@
 Project Zero
 ============
-file:///Users/phillwatson/Projects/project0/index.html
+https://philwatson77.github.io/potential-disco/
 
 Tic Tac Toe
 -----------
